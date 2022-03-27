@@ -3,7 +3,7 @@
 	var posY= -13;
 //	var allSupport = (document.all!=null || window.sidebar!=null);
 
-	var image_path = "http://static.pardus.at/images/";
+	var image_path = "https://static.pardus.at/images/";
 
 	function getElement(elName) {
 		// Get an element from its ID

@@ -45,8 +45,8 @@ var showDebug = false; //if set to *true* debug messages are shown
 
 var servers = [
 	{
-		name: "Union Infocenter (Jivemaster)",
-		url: "http://jivemaster.byethost4.com/pardus/infocenter",
+		name: "Pardus Infocenter",
+		url: "https://www.parduslogger.com/artemis/infocenter",
 		accounts: {
 			artemis: {name: "Artemis-Send", password: "Pardus"}
 		}
