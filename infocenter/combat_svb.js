@@ -458,8 +458,8 @@ for (var x = 0; x < hits1_size; x++) {
         held_back_at.shift();
         r = 1;
     }
-    complete += "<tr><th width='5'>" + r + "</th><td valign='top' width='50%'><table><tr><td>" + hits1[x] + "</td></tr></table></td>";
-    complete += "<th width='5'>" + r + "</th><td valign='top' width='50%'><table><tr><td>" + hits2[x] + "</td></tr></table></td>";
+    complete += "<tr><th width='15px'>" + r + "</th><td valign='top'><table><tr><td>" + hits1[x] + "</td></tr></table></td>";
+    complete += "<th width='15px'>" + r + "</th><td valign='top'><table><tr><td>" + hits2[x] + "</td></tr></table></td>";
 }
 complete += "</table>";
 

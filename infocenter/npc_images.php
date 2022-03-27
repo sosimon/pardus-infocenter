@@ -19,9 +19,6 @@ euryale.png
 euryale_swarmlings.png
 exocrab.png
 feral_serpent.png
-feral_serpent_1.png
-feral_serpent_2.png
-feral_serpent_3.png
 frost_crystal.png
 fuel_tanker.png
 glowprawn.png
@@ -45,7 +42,6 @@ nebula_locust.png
 nebula_mole.png
 nebula_serpent.png
 oblivion_vortex.png
-pirate_captain.png
 pirate_experienced.png
 pirate_famous.png
 pirate_inexperienced.png
@@ -74,12 +70,12 @@ space_worm_mutated.png
 starclaw.png
 stheno.png
 stheno_swarmlings.png
-wormhole.png
 vyrex_assassin.png
 vyrex_hatcher.png
 vyrex_larva.png
 vyrex_mutant_mauler.png
 vyrex_stinger.png
+wormhole.png
 x993_battlecruiser.png
 x993_mothership.png
 x993_squad.png

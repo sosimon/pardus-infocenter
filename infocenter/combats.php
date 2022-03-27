@@ -61,37 +61,45 @@
 		);
 
 	foreach ($combats as $cmbt):
-                if ($cmbt->getType() == "Ship vs NPC" || $cmbt->getType() == "Ship vs Ship"):
-                        $cr = split(";", $cmbt->getData());
-                        $len = count($cr);
-                        $stats = $len-9;
-                        for($i=1;$i<=$len;$i++){
-                                if($cr[$len-$i] =="E") $stats=$len-$i;
-                        }
-
+		$statsSummary = false;
+        if ($cmbt->getType() == "Ship vs NPC" || $cmbt->getType() == "Ship vs Ship"):
+			$statsSummary = true;
+            $cr = explode(";", $cmbt->getData());
+            $len = count($cr);
+            $stats = $len-9;
+			$statsE = 0;
+			$statsF = 0;
+            for($i=1; $i<=$len; $i++){
+                if($cr[$len-$i] =="E") $stats=$len-$i;
+                if($cr[$len-$i] =="E") $statsE=$len-$i;
+                if($cr[$len-$i] =="F") $statsF=$len-$i;
+            }
+			if (($statsE == 0) || ($statsF == 0)) $statsSummary = false;
+		endif;
+		if ($statsSummary):
 ?>
         combats.push({
                 attacker: {
-                        name: <?php printf("\"%s\"", $cmbt->getAttacker())?>,
+                        name: <?php printf("\"%s\"", preg_replace('/[^A-Za-z0-9 ]/','',$cmbt->getAttacker()))?>,
                         image: <?php printf("\"%s\"", $cr[1])?>,
                         isNPC: <?php echo((int) (stripos($npcImages, $cr[1]) !== false))?>,
-                        hullA: <?php echo($cr[2])?>,
-                        armourA: <?php echo($cr[3])?>,
-                        shieldA: <?php echo($cr[4])?>,
-                        hullB: <?php echo($cr[$stats + 1])?>,
-                        armourB: <?php echo($cr[$stats + 2])?>,
-                        shieldB: <?php echo($cr[$stats + 3])?>
+                        hullA: <?php echo(intval($cr[2]))?>,
+                        armourA: <?php echo(intval($cr[3]))?>,
+                        shieldA: <?php echo(intval($cr[4]))?>,
+                        hullB: <?php echo(intval($cr[$stats + 1]))?>,
+                        armourB: <?php echo(intval($cr[$stats + 2]))?>,
+                        shieldB: <?php echo(intval($cr[$stats + 3]))?>
                 },
                 defender: {
-                        name: <?php printf("\"%s\"", $cmbt->getDefender())?>,
+                        name: <?php printf("\"%s\"", preg_replace('/[^A-Za-z0-9 ]/','',$cmbt->getDefender()))?>,
                         image: <?php printf("\"%s\"", $cr[6])?>,
                         isNPC: <?php echo((int) (stripos($npcImages, $cr[6]) !== false))?>,
-                        hullA: <?php echo($cr[7])?>,
-                        armourA: <?php echo($cr[8])?>,
-                        shieldA: <?php echo($cr[9])?>,
-                        hullB: <?php echo($cr[$stats + 5])?>,
-                        armourB: <?php echo($cr[$stats + 6])?>,
-                        shieldB: <?php echo($cr[$stats + 7])?>
+                        hullA: <?php echo(intval($cr[7]))?>,
+                        armourA: <?php echo(intval($cr[8]))?>,
+                        shieldA: <?php echo(intval($cr[9]))?>,
+                        hullB: <?php echo(intval($cr[$stats + 5]))?>,
+                        armourB: <?php echo(intval($cr[$stats + 6]))?>,
+                        shieldB: <?php echo(intval($cr[$stats + 7]))?>
                 }
         });
 <?php
@@ -115,7 +123,7 @@
 		if (!empty($filterAdditional))
 			$params .= "&additional=" . $filterAdditional;
 
-		PageNavigator::draw($pageCount, $pageNumber, 33, $params, "combats.php");
+		PageNavigator::draw($pageCount, $pageNumber, 5, $params, "combats.php");
 	}
 ?>
 

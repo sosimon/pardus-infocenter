@@ -1,33 +1,33 @@
-<!--
+
 	var posX = 15;
 	var posY= -13;
-	var allSupport = (document.all!=null || window.sidebar!=null);
+//	var allSupport = (document.all!=null || window.sidebar!=null);
 
-	var image_path = "";
+	var image_path = "http://static.pardus.at/images/";
 
 	function getElement(elName) {
 		// Get an element from its ID
-		if (allSupport)
+//		if (allSupport)
 			return document.getElementById(elName);
-		else
-			return document.layers[elName];
+//		else
+//			return document.layers[elName];
 	}
 
 	function writeContents(el, content) {
 		// Replace the contents of the tooltip
-		if (allSupport)
+//		if (allSupport)
 			el.innerHTML = content;
-		else {
-			// In NS, insert a table to work around
-			// stylesheet rendering bug.
-			// NS fails to apply style sheets when writing
-			// contents into a positioned element.
-			el.document.open();
-			el.document.write("<TABLE BORDER=1 bordercolor=black width='100%' cellpadding=0 cellspacing=0><TR><TD BGCOLOR=#000000>");
-			el.document.write(content);
-			el.document.write("</TD></TR></TABLE>");
-			el.document.close();
-		}
+//		else {
+//			// In NS, insert a table to work around
+//			// stylesheet rendering bug.
+//			// NS fails to apply style sheets when writing
+//			// contents into a positioned element.
+//			el.document.open();
+//			el.document.write("<TABLE BORDER=1 bordercolor=black width='100%' cellpadding=0 cellspacing=0><TR><TD BGCOLOR=#000000>");
+//			el.document.write(content);
+//			el.document.write("</TD></TR></TABLE>");
+//			el.document.close();
+//		}
 	}
 
 	function getOffset(el, which) {
@@ -50,7 +50,7 @@
 		else
 			xOffset = 0;
 
-		if (allSupport) {
+//		if (allSupport) {
 			var x = getOffset(src, "Left") + posX + xOffset;
 			var y = getOffset(src, "Top") + posY;
 			if (document.body.clientHeight + document.body.scrollTop < y + el.offsetHeight)
@@ -61,23 +61,23 @@
 			//mozilla
 			el.style.top = y + "px";
 			el.style.left = x + "px";
-		} else {
-			el.top = src.y + 20 + posY;
-			el.left = src.x + posX + xOffset;
-		}
+//		} else {
+//			el.top = src.y + 20 + posY;
+//			el.left = src.x + posX + xOffset;
+//		}
 	}
 
 	function setVisibility(el, bDisplay) {
 		if (bDisplay)
-			if (allSupport)
+//			if (allSupport)
 				el.style.visibility = "visible"; 
-			else
-				el.visibility = "show";
+//			else
+//				el.visibility = "show";
 		else
-			if (allSupport)
+//			if (allSupport)
 				el.style.visibility = "hidden";
-			else
-				el.visibility = "hidden";
+//			else
+//				el.visibility = "hidden";
 	}
 
 	function wrapContent(title, footer, content) {
@@ -112,4 +112,4 @@
 	function nukeTip() {
 		setVisibility(getElement("tipBox"), false);
 	}
-//-->
+

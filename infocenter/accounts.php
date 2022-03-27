@@ -105,7 +105,7 @@
 	<table background="<?php echo(SettingsMod::STATIC_IMAGES)?>/bgd.gif" class="messagestyle" align="center">
 	<tr>
 		<th>Username:</th>
-		<td><input type="text" name="name" style="width: 100%" /></td>
+		<td><input type="text" name="name" style="width: 200px" /></td>
 	</tr>
 	<tr>
 		<th>Password:</th>

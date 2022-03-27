@@ -33,7 +33,7 @@
 			if ($filter)
 				$params .= sprintf("&%s=%s", $name, $filter);
 		}
-		PageNavigator::draw($pageCount, $pageNumber, 17, $params, "hacks.php");
+		PageNavigator::draw($pageCount, $pageNumber, 5, $params, "hacks.php");
 	}
 ?>
 <html>

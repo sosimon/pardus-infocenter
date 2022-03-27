@@ -30,9 +30,9 @@
 
 var enableCombatShare   = true;
 var enableHackShare     = true;
-var hideHackerLocation  = false; //if set to *true* the hacker location won't be shown
-var enableMissionsShare = true;
-var enablePaymentShare  = true;
+var hideHackerLocation  = true; //if set to *true* the hacker location won't be shown
+var enableMissionsShare = false;
+var enablePaymentShare  = false;
 
 var showDebug = false; //if set to *true* debug messages are shown
 
@@ -45,12 +45,9 @@ var showDebug = false; //if set to *true* debug messages are shown
 
 var servers = [
 	{
-		name: "<INFOCENTER_NAME>", //the name you want to be displayed in the combo box
-		url: "<INFOCENTER_URL>", //the exact url to your Infocenter, no trailing slashes
-		accounts: { //the user names you wont to use; to disable a universe, just delete the line, but look twice at commas!!!
-					//ATTENTION: if not using EASY script it is suggested to give to these account(s) permissions to send data only
-			<UNIVERSE>: {name: "<USERNAME>", password: "<PASSWORD>"}
-		}
+		name: "Union Infocenter (Jivemaster)", //the name you want to be displayed in the combo box
+		url: "http://jivemaster.byethost4.com/pardus/infocenter", //the exact url to your Infocenter, no trailing slashes
+		accounts: {artemis: {name: "Artemis-Send", password: "Pardus"}}
 	}
 ];
 

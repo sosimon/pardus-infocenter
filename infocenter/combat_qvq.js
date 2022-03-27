@@ -463,8 +463,8 @@ complete += "<tr><th colspan='4'>Combat Report: Squadron vs Squadron</th></tr>";
 var r = 0;
 for (var x = 0; x < hits1_size; x++) {
     r++;
-    complete += "<tr><th width='5'>" + r + "</th><td valign='top' width='50%'><table><tr><td>" + hits1[x] + "</td></tr></table></td>";
-    complete += "<th width='5'>" + r + "</th><td valign='top' width='50%'><table><tr><td>" + hits2[x] + "</td></tr></table></td>";
+    complete += "<tr><th width='15px'>" + r + "</th><td valign='top'><table><tr><td>" + hits1[x] + "</td></tr></table></td>";
+    complete += "<th width='15px'>" + r + "</th><td valign='top'><table><tr><td>" + hits2[x] + "</td></tr></table></td>";
 }
 complete += "</table>";
 
