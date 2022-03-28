@@ -45,9 +45,9 @@ var showDebug = false; //if set to *true* debug messages are shown
 
 var servers = [
 	{
-		name: "Pardus Infocenter", //the name you want to be displayed in the combo box
-		url: "http://localhost", //the exact url to your Infocenter, no trailing slashes
-		accounts: {artemis: {name: "Artemis-Send", password: "Pardus"}}
+		name: "<INFOCENTER_NAME>", //the name you want to be displayed in the combo box
+		url: "<INFOCENTER_URL>", //the exact url to your Infocenter, no trailing slashes
+		accounts: {<UNIVERSE>: {name: "<USERNAME>", password: "<PASSWORD>"}}
 	}
 ];
 
