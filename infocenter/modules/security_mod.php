@@ -45,8 +45,10 @@
 		}
 
 		public static function login() {
-			session_name(SettingsMod::SESSION_NAME);
-			session_start();
+			if (!headers_sent() && !session_id()) {
+				session_name(SettingsMod::SESSION_NAME);
+				session_start();
+			}
 			if (!isset($_SESSION["account"])) {
 				$acc = self::checkLogin();
 				if (is_null($acc)) {
@@ -59,7 +61,7 @@
 		}
 
 		public static function logout() {
-			if (session_status() == PHP_SESSION_NONE) {
+			if (!headers_sent() && !session_id()) {
 				session_name(SettingsMod::SESSION_NAME);
 				session_start();
 				$_SESSION = array();
@@ -67,8 +69,9 @@
 			if (isset($_COOKIE[session_name()])) {
 				setcookie(session_name(), "", time() - 60 * 60, "/");
 			}
-			session_destroy();
-			header("Location: login.php");
+			if (!headers_sent()) {
+				header("Location: login.php");
+			}
 			exit();
 		}
 	}

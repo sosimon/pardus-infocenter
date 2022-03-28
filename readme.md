@@ -21,8 +21,28 @@ docker-compose up --build
 ```
 
 ## PRODUCTION
-Override `modules/setting_mod.php` and the URL in `pardus_infocenter_share.user.js`
 
+### Deploy
+
+#### DB
+* Install MySQL (set a root password)
+* As root, create db_user and database (run `./mysql/init-prod.sql`)
+* As db_user, create the tables (run `.mysql/db.sql`)
+
+#### App
+* Install PHP, Apache, and php-mysql
+```
+sudo apt install mysql-server php7.4 apache2 php-mysql
+```
+* Configure Apache (example config in `./apache/parduslogger.com.conf`)
+* Enable ssl mod - `sudo a2enmod ssl`
+* Copy SSL certs to `/etc/apache2/ssl/` (referenced in Apache config)
+* Clone repo from Github
+* Copy `infocenter/` folder to whereever you configured Apache to serve from
+* Override `modules/setting_mod.php` with database connection info and the URL in `pardus_infocenter_share.user.js`
+```
+sed -i 's/http:\/\/localhost/https:\/\/www.parduslogger.com/g' /var/www/parduslogger.com/infocenter/pardus_infocenter_share.user.js
+```
 
 ## UPGRADE
 0) If you have 1.5b2.005 or any other 1.5x version installed, import "/mysql/upgrade-1.6.sql" in phpMyAdmin
