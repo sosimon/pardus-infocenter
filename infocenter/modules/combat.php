@@ -102,7 +102,7 @@
 			if (!isset($this->rounds)) {
 				$this->rounds = 0;
 				$r1 = "R1;";
-				$attacks = split($r1, $this->data);
+				$attacks = explode($r1, $this->data);
 				for ($i = 1; $i < count($attacks); $i++) {
 					preg_match("/(?<=R)\d+(?!.*R\d+)/", $r1 . $attacks[$i], $matches);
 					$this->rounds += $matches[0];

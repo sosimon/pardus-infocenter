@@ -45,8 +45,8 @@ var showDebug = false; //if set to *true* debug messages are shown
 
 var servers = [
 	{
-		name: "Union Infocenter (Jivemaster)", //the name you want to be displayed in the combo box
-		url: "http://jivemaster.byethost4.com/pardus/infocenter", //the exact url to your Infocenter, no trailing slashes
+		name: "Pardus Infocenter", //the name you want to be displayed in the combo box
+		url: "http://localhost", //the exact url to your Infocenter, no trailing slashes
 		accounts: {artemis: {name: "Artemis-Send", password: "Pardus"}}
 	}
 ];

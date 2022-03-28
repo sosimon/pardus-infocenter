@@ -46,7 +46,7 @@ var showDebug = false; //if set to *true* debug messages are shown
 var servers = [
 	{
 		name: "Pardus Infocenter",
-		url: "https://www.parduslogger.com/artemis/infocenter",
+		url: "http://localhost",
 		accounts: {
 			artemis: {name: "Artemis-Send", password: "Pardus"}
 		}

@@ -21,7 +21,7 @@
 	<table width="100%" height="100%">
 	<tr height="20">
 		<td align="center"><?php
-		echo('<img src="http://static.pardus.at/various/universes/'.strtolower($universe).'_16x16.png"');
+		echo('<img src="https://static.pardus.at/various/universes/'.strtolower($universe).'_16x16.png"');
 		echo(' title="'.$universe.': '.$name.' ('.$level.')" style="vertical-align: middle;" alt="'.$universe.': '.$name.' ('.$level.')"');
 		echo(' border="0" height="13" width="13"> '."\n");
 		echo('			<span style="font-weight: bold;">'.$name.'</span> <span style="font-weight: bold; color: #FF0000">('.$level.')</span> | '."\n");

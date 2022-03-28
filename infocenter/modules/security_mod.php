@@ -59,9 +59,11 @@
 		}
 
 		public static function logout() {
-			session_name(SettingsMod::SESSION_NAME);
-			session_start();
-			$_SESSION = array();
+			if (session_status() == PHP_SESSION_NONE) {
+				session_name(SettingsMod::SESSION_NAME);
+				session_start();
+				$_SESSION = array();
+			}
 			if (isset($_COOKIE[session_name()])) {
 				setcookie(session_name(), "", time() - 60 * 60, "/");
 			}

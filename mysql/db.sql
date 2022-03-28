@@ -18,7 +18,8 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 --
 -- Database: `pardus_info_center`
 --
-
+-- If your database is called something else, change the following statement.
+USE infocenter;
 -- --------------------------------------------------------
 
 --
