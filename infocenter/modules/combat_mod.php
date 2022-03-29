@@ -216,7 +216,7 @@
 				intval($cmbt->getId())
 			);
 
-			mysqli_query($sql, $conn);
+			mysqli_query($conn, $sql);
 		}
 
 	}
