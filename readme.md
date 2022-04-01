@@ -30,9 +30,9 @@ docker-compose up --build
 * As db_user, create the tables (run `.mysql/db.sql`)
 
 #### App
-* Install PHP, Apache, and php-mysql
+* Install PHP, Apache, and php mods
 ```
-sudo apt install mysql-server php7.4 apache2 php-mysql
+sudo apt install mysql-server php7.4 apache2 php-mysql php-xml
 ```
 * Configure Apache (example config in `./apache/parduslogger.com.conf`)
 * Enable ssl mod - `sudo a2enmod ssl`

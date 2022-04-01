@@ -41,7 +41,7 @@
 					mysqli_real_escape_string($conn, $hack["pilot_id"]),
 					mysqli_real_escape_string($conn, $hack["pilot"]),
 					mysqli_real_escape_string($conn, $hack["credits"]),
-					mysqli_real_escape_string(v($conn, $hack, "experience")),
+					mysqli_real_escape_string($conn, v($hack, "experience")),
 					v($hack, "position") ? mysqli_real_escape_string($conn, v($hack["position"], "cluster")) : null,
 					v($hack, "position") ? mysqli_real_escape_string($conn, v($hack["position"], "sector")) : null,
 					v($hack, "position") ? mysqli_real_escape_string($conn, v($hack["position"], "coords")) : null,
