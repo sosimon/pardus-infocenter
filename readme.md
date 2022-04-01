@@ -141,10 +141,12 @@ All images are Copyright (c) 2003-2010 Bayer & Szell OG. All Rights Reserved.
 # VERSION HISTORY
 
 ## 1.6.12 (2022-03-27)
-- fix PHP 7.4 compatability issues
+- fix PHP 7.4 compatability issues, including replacing `split()` with `explode()`
 - add Dockerfile and docker-compose.yml
 - add `setting_mod.php` for development
-- update `readme.md` 
+- update `readme.md`
+- add https to includes and matches in user script
+- fix `v()` function in `modules/hack_mod.php`
 
 ## 1.6.11 (2012-04-24)
 - nowrap mod Jivemaster by http://forum.pardus.at/index.php?showtopic=57706&view=findpost&p=1170585
