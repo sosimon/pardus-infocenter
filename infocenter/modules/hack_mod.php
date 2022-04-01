@@ -37,7 +37,7 @@
 					date("Y-m-d H-i-s", $hack["date"] / 1000),
 					$universe,
 					mysqli_real_escape_string($conn, $hack["method"]),
-					mysqli_real_escape_string($conn, $hack["location"]),
+					mysqli_real_escape_string($conn, v($hack, "location")),
 					mysqli_real_escape_string($conn, $hack["pilot_id"]),
 					mysqli_real_escape_string($conn, $hack["pilot"]),
 					mysqli_real_escape_string($conn, $hack["credits"]),
