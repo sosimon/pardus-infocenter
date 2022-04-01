@@ -6,10 +6,18 @@
 // @include http://*.pardus.at/hack.php*
 // @include http://*.pardus.at/bulletin_board.php*
 // @include http://*.pardus.at/overview_payment_log.php*
+// @include https://*.pardus.at/combat_details.php*
+// @include https://*.pardus.at/hack.php*
+// @include https://*.pardus.at/bulletin_board.php*
+// @include https://*.pardus.at/overview_payment_log.php*
 // @match http://*.pardus.at/combat_details.php*
 // @match http://*.pardus.at/hack.php*
 // @match http://*.pardus.at/bulletin_board.php*
 // @match http://*.pardus.at/overview_payment_log.php*
+// @match https://*.pardus.at/combat_details.php*
+// @match https://*.pardus.at/hack.php*
+// @match https://*.pardus.at/bulletin_board.php*
+// @match https://*.pardus.at/overview_payment_log.php*
 // @author	Pio -Orion- siur2@yahoo.com
 // @author	Uncledan -Orion- / Larry Legend -Artemis- uncledan@uncledan.it
 // @author	Taurvi -Artemis- / Sobkou -Orion- sobkou.pardus@gmail.com

@@ -137,13 +137,13 @@
 				if ($hack["buildings"])
   					$hack["buildings"] = XmlHelper::xmlToArray($hack["buildings"]);
 				if ($hack["foes"])
-  					$hack["foes"] = split(",", $hack["foes"]);
+  					$hack["foes"] = explode(",", $hack["foes"]);
   				if ($hack["friends"])
-  					$hack["friends"] = split(",", $hack["friends"]);
+  					$hack["friends"] = explode(",", $hack["friends"]);
   				if ($hack["foeAlliances"])
-  					$hack["foeAlliances"] = split(",", $hack["foeAlliances"]);
+  					$hack["foeAlliances"] = explode(",", $hack["foeAlliances"]);
   				if ($hack["friendAlliances"])
-  					$hack["friendAlliances"] = split(",", $hack["friendAlliances"]);
+  					$hack["friendAlliances"] = explode(",", $hack["friendAlliances"]);
 			} else
 				$hack = null;
 			mysqli_close($conn);
