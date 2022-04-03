@@ -19,6 +19,7 @@ Assuming docker and docker-compose is installed in your environment:
 ```
 docker-compose up --build
 ```
+Point the user script to http://localhost/infocenter
 
 ## PRODUCTION
 
@@ -32,7 +33,12 @@ docker-compose up --build
 #### App
 * Install PHP, Apache, and php mods
 ```
-sudo apt install mysql-server php7.4 apache2 php-mysql php-xml
+sudo apt install -y \
+  mysql-server \
+  php7.4 \
+  apache2 \
+  php-mysql \
+  php-xml
 ```
 * Configure Apache (example config in `./apache/parduslogger.com.conf`)
 * Enable ssl mod - `sudo a2enmod ssl`
