@@ -19,6 +19,8 @@ euryale.png
 euryale_swarmlings.png
 exocrab.png
 feral_serpent.png
+feral_serpent_1.png
+feral_serpent_2.png
 frost_crystal.png
 fuel_tanker.png
 glowprawn.png
