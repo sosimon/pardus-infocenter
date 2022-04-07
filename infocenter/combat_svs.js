@@ -94,15 +94,22 @@ function inArray(search, arr)
     return -1;
 }
 
+function isShip(shipImage) {
+	var i = shipImage.lastIndexOf("/") + 1;
+	return npc_imgs.indexOf(shipImage.substr(i)) == -1;
+}
+
 cr = cr.split(";");
 var cr_size = cr.length;
 var shipname1 = cr[0];
 var shipimage1 = cr[1];
+var is_pilot1 = isShip(shipimage1);
 var hull1a = cr[2];
 var armor1a = cr[3];
 var shield1a = cr[4];
 var shipname2 = cr[5];
 var shipimage2 = cr[6];
+var is_pilot2 = isShip(shipimage2);
 var hull2a = cr[7];
 var armor2a = cr[8];
 var shield2a = cr[9];
@@ -123,8 +130,8 @@ while (cr[i] != 'B') {
         id = extractId(cr[i+1]);
         lindices1[l] = id;
         l++;
-        weapons1 += "<img src='//static.pardus.at/img/std/equipment/" + cr[i+3] + "' alt=''> " + cr[i+2] + "<br>";
-        w1[id] = "<img src='//static.pardus.at/img/std/equipment/" + cr[i+3] + "' title='" + cr[i+2] + "' alt='" + cr[i+2] + "'>";
+        weapons1 += (is_pilot1 ? "<img src='" + static_images + "/equipment/" + cr[i+3] + "'> " : "") + cr[i+2] + "<br>";
+        w1[id] = is_pilot1 ? "<img src='" + static_images + "/equipment/" + cr[i+3] + "' title='" + cr[i+2] + "'>" : cr[i+2];
         if (inArray(id, windices1) == -1) {
             wtype1[id] = {};
             wtype1[id]["type"] = cr[i];
@@ -145,8 +152,7 @@ while (cr[i] != "R1" && cr[i] != 'E') {
         id = extractId(cr[i+1]);
         lindices2[l] = id;
         l++;
-        weapons2 += cr[i+2] + "<br>";
-        w2[id] = cr[i+2];
+        w2[id] = is_pilot2 ? "<img src='" + static_images + "/equipment/" + cr[i+3] + "' title='" + cr[i+2] + "'>" : cr[i+2];
         if (inArray(id, windices2) == -1) {
             wtype2[id] = {};
             wtype2[id]["type"] = cr[i];
