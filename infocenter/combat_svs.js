@@ -152,6 +152,7 @@ while (cr[i] != "R1" && cr[i] != 'E') {
         id = extractId(cr[i+1]);
         lindices2[l] = id;
         l++;
+        weapons2 += (is_pilot2 ? "<img src='" + static_images + "/equipment/" + cr[i+3] + "'> " : "") + cr[i+2] + "<br>";
         w2[id] = is_pilot2 ? "<img src='" + static_images + "/equipment/" + cr[i+3] + "' title='" + cr[i+2] + "'>" : cr[i+2];
         if (inArray(id, windices2) == -1) {
             wtype2[id] = {};
@@ -312,15 +313,15 @@ if (i < cr_size && cr[i] == 'R') {
     }
 }
 
-var complete = "<table width='660' border='0' cellspacing='2' cellpadding='2' class='messagestyle' style='background:url(//static.pardus.at/img/std/bgdark.gif)'>";
+var complete = "<table width='660' border='0' cellspacing='2' cellpadding='2' class='messagestyle' background='" + static_images + "/bgdark.gif'>";
 complete += "<tr><th colspan='4'>Confrontation in " + cmbt_location + "</th></tr>";
-complete += "<tr><td colspan='2' align='center' valign='top'><table><tr><td><b>" + shipname1 + "</b><br><img src='//static.pardus.at/img/std/ships/" + shipimage1 + "' alt=''><br>Hull: " + hull1a + "<br>Armor: " + armor1a + "<br>Shield: " + shield1a + "</td></tr></table></td>";
-complete += "<td colspan='2' align='center' valign='top'><table><tr><td><b>" + shipname2 + "</b><br><img src='//static.pardus.at/img/std/opponents/" + shipimage2 + "' alt=''><br>Hull: " + hull2a + "<br>Armor: " + armor2a + "<br>Shield: " + shield2a + "</td></tr></table></td></tr>";
+complete += "<tr><td colspan='2' align='center' valign='top'><table><tr><td><b>" + shipname1 + "</b><br><img src='" + static_images + "/" + (is_pilot1 ? "ships/" : "opponents/") + shipimage1 + "'><br>Hull: " + hull1a + "<br>Armor: " + armor1a + "<br>Shield: " + shield1a + "</td></tr></table></td>";
+complete += "<td colspan='2' align='center' valign='top'><table><tr><td><b>" + shipname2 + "</b><br><img src='" + static_images + "/" + (is_pilot2 ? "ships/" : "opponents/") + shipimage2 + "'><br>Hull: " + hull2a + "<br>Armor: " + armor2a + "<br>Shield: " + shield2a + "</td></tr></table></td></tr>";
 complete += "<tr><th colspan='4'>Weapons used</th></tr>";
 complete += "<tr><td colspan='2' align='center' valign='top'><table><tr><td>" + weapons1 + "</td></tr></table></td><td colspan='2' align='center' valign='top'><table><tr><td>" + weapons2 + "</td></tr></table></td></tr>";
 complete += "<tr><th colspan='4'>Resulting Ship Conditions</th></tr>";
-complete += "<tr><td colspan='2' align='center' valign='top'><table><tr><td><b>" + shipname1 + "</b><br><img src='//static.pardus.at/img/std/ships/" + shipimage1 + "' alt=''><br>Hull: " + hull1b + "<br>Armor: " + armor1b + "<br>Shield: " + shield1b + "</td></tr></table></td>";
-complete += "<td colspan='2' align='center' valign='top'><table><tr><td><b>" + shipname2 + "</b><br><img src='//static.pardus.at/img/std/opponents/" + shipimage2 + "' alt=''><br>Hull: " + hull2b + "<br>Armor: " + armor2b + "<br>Shield: " + shield2b + "</td></tr></table></td></tr>";
+complete += "<tr><td colspan='2' align='center' valign='top'><table><tr><td><b>" + shipname1 + "</b><br><img src='" + static_images + "/" + (is_pilot1 ? "ships/" : "opponents/") + shipimage1 + "'><br>Hull: " + hull1b + "<br>Armor: " + armor1b + "<br>Shield: " + shield1b + "</td></tr></table></td>";
+complete += "<td colspan='2' align='center' valign='top'><table><tr><td><b>" + shipname2 + "</b><br><img src='" + static_images + "/" + (is_pilot2 ? "ships/" : "opponents/") + shipimage2 + "'><br>Hull: " + hull2b + "<br>Armor: " + armor2b + "<br>Shield: " + shield2b + "</td></tr></table></td></tr>";
 var hits1_size = hits1.length;
 var hits2_size = hits2.length;
 complete += "<tr><th colspan='4' class='premium'><a href='http://www.pardus.at/index.php?section=premiumfeatures' target='_blank'>Statistics</a></th></tr>";
